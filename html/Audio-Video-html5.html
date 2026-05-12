@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Audio and Video Example</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #1e3a8a;
+        }
+
+        .media-box {
+            background: white;
+            width: 700px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        audio,
+        video {
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="media-box">
+
+        <h1>HTML5 Audio and Video Tags</h1>
+
+        <!-- Audio Tag -->
+        <h2>Audio Player</h2>
+
+        <audio controls autoplay loop muted>
+
+            <source src="https://samplelib.com/mp3/sample-3s.mp3" type="audio/mpeg">
+
+            Your browser does not support audio.
+
+        </audio>
+
+        <br><br>
+
+        <!-- Video Tag -->
+        <h2>Video Player</h2>
+
+        <video controls
+            autoplay
+            loop
+            muted
+            poster="poster.jpg"
+            width="600">
+
+            <source src="https://samplelib.com/preview/mp4/sample-5s.mp4" type="video/mp4">
+
+            Your browser does not support video.
+
+        </video>
+
+    </div>
+
+</body>
+
+</html>

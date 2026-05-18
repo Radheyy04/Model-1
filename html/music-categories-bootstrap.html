@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Categories</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #111827;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+        }
+
+        .hero {
+            background: linear-gradient(to right, #8b5cf6, #ec4899);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .music-card {
+            transition: 0.3s;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .music-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .music-img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        footer {
+            background-color: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <a class="navbar-brand" href="#">Music World</a>
+
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Genres</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Artists</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="container">
+
+            <h1 class="display-4 fw-bold">Explore Music Categories</h1>
+
+            <p class="lead">
+                Discover different music genres and artists
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Music Categories -->
+    <section class="container my-5">
+
+        <div class="row g-4">
+
+            <!-- Pop -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+
+                <div class="card music-card">
+
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f"
+                        class="card-img-top music-img" alt="Pop Music">
+
+                    <div class="card-body">
+
+                        <h4 class="card-title">Pop Music</h4>
+
+                        <p class="card-text">
+                            Trending hits, chartbusters, and popular artists from around the world.
+                        </p>
+
+                        <a href="#" class="btn btn-primary">Explore</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Rock -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+
+                <div class="card music-card">
+
+                    <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a"
+                        class="card-img-top music-img" alt="Rock Music">
+
+                    <div class="card-body">
+
+                        <h4 class="card-title">Rock Music</h4>
+
+                        <p class="card-text">
+                            Electric guitars, live concerts, and legendary rock bands.
+                        </p>
+
+                        <a href="#" class="btn btn-danger">Explore</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Jazz -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+
+                <div class="card music-card">
+
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d"
+                        class="card-img-top music-img" alt="Jazz Music">
+
+                    <div class="card-body">
+
+                        <h4 class="card-title">Jazz Music</h4>
+
+                        <p class="card-text">
+                            Smooth melodies, saxophone classics, and soulful rhythms.
+                        </p>
+
+                        <a href="#" class="btn btn-warning">Explore</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Hip Hop -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+
+                <div class="card music-card">
+
+                    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81"
+                        class="card-img-top music-img" alt="Hip Hop">
+
+                    <div class="card-body">
+
+                        <h4 class="card-title">Hip Hop</h4>
+
+                        <p class="card-text">
+                            Rap battles, street culture, and energetic hip hop beats.
+                        </p>
+
+                        <a href="#" class="btn btn-dark">Explore</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Classical -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+
+                <div class="card music-card">
+
+                    <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76"
+                        class="card-img-top music-img" alt="Classical Music">
+
+                    <div class="card-body">
+
+                        <h4 class="card-title">Classical Music</h4>
+
+                        <p class="card-text">
+                            Timeless symphonies, orchestras, and instrumental masterpieces.
+                        </p>
+
+                        <a href="#" class="btn btn-success">Explore</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- EDM -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+
+                <div class="card music-card">
+
+                    <img src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34"
+                        class="card-img-top music-img" alt="EDM Music">
+
+                    <div class="card-body">
+
+                        <h4 class="card-title">EDM</h4>
+
+                        <p class="card-text">
+                            Electronic dance music, DJ festivals, and party vibes.
+                        </p>
+
+                        <a href="#" class="btn btn-info">Explore</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>© 2026 Music World | Bootstrap Grid System Website</p>
+
+    </footer>
+
+</body>
+
+</html>

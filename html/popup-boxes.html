@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Popup Boxes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background:#aa7b8a;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            width: 400px;
+            animation: fadeIn 1s ease;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 32px;
+        }
+
+        p {
+            margin-bottom: 25px;
+            color: #555;
+            font-size: 18px;
+        }
+
+        button {
+            width: 220px;
+            padding: 14px;
+            margin: 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            color: white;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .alert-btn {
+            background: #ff9800;
+        }
+
+        .confirm-btn {
+            background: #4caf50;
+        }
+
+        .prompt-btn {
+            background: #e91e63;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Popup Boxes</h1>
+
+        <p>Click the buttons below to see different JavaScript popup boxes.</p>
+
+        <button class="alert-btn" onclick="showAlert()">
+            Alert Box
+        </button>
+
+        <br>
+
+        <button class="confirm-btn" onclick="showConfirm()">
+            Confirm Box
+        </button>
+
+        <br>
+
+        <button class="prompt-btn" onclick="showPrompt()">
+            Prompt Box
+        </button>
+
+    </div>
+
+    <script>
+
+        // Alert Box
+        function showAlert() {
+
+            alert("This is an Alert Box!");
+
+        }
+
+        // Confirm Box
+        function showConfirm() {
+
+            let result = confirm("Do you want to continue?");
+
+            if (result) {
+
+                alert("You clicked OK");
+
+            }
+
+            else {
+
+                alert("You clicked Cancel");
+
+            }
+        }
+
+        // Prompt Box
+        function showPrompt() {
+
+            let name = prompt("Enter your name:");
+
+            if (name != null && name != "") {
+
+                alert("Welcome " + name + " 🎉");
+
+            }
+
+            else {
+
+                alert("No name entered");
+
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

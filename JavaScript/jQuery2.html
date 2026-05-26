@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move DIV Using jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #c5ffac, #7ee09c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .box {
+            width: 300px;
+            min-height: 250px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1e3a8a;
+        }
+
+        #moveDiv {
+            background: #068240;
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        #moveDiv:hover {
+            transform: scale(1.05);
+        }
+
+        button {
+            height: 50px;
+            padding: 0 25px;
+            border: none;
+            border-radius: 10px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="box" id="box1">
+            <h2>Box 1</h2>
+
+            <div id="moveDiv">
+                Move Me
+            </div>
+        </div>
+
+        <button id="btn">Move →</button>
+
+        <div class="box" id="box2">
+            <h2>Box 2</h2>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#btn").click(function () {
+
+                $("#moveDiv").appendTo("#box2").hide().fadeIn(600);
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>JavaScript Math Methods</title>
+
+</head>
+
+<body>
+
+    <h1>JavaScript Math Methods</h1>
+
+    <button onclick="showMath()">
+        Show Methods
+    </button>
+
+    <p id="result"></p>
+
+    <script>
+
+        function showMath(){
+
+            let x = -25;
+            let y = 4.7;
+
+            document.getElementById("result").innerHTML =
+
+            "abs(x): " + Math.abs(x) + "<br><br>" +
+
+            "sin(x): " + Math.sin(1) + "<br><br>" +
+
+            "cos(x): " + Math.cos(1) + "<br><br>" +
+
+            "tan(x): " + Math.tan(1) + "<br><br>" +
+
+            "ceil(y): " + Math.ceil(y) + "<br><br>" +
+
+            "floor(y): " + Math.floor(y) + "<br><br>" +
+
+            "round(y): " + Math.round(y) + "<br><br>" +
+
+            "pow(2,3): " + Math.pow(2,3) + "<br><br>" +
+
+            "sqrt(25): " + Math.sqrt(25) + "<br><br>" +
+
+            "max(5,10,15): " + Math.max(5,10,15) + "<br><br>" +
+
+            "random(): " + Math.random();
+
+        }
+
+    </script>
+
+</body>
+</html>

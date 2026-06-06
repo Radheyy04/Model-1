@@ -1,0 +1,150 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID vs Class & Box Model Demo</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            padding: 30px;
+        }
+
+        /* MAIN CONTAINER */
+        #main-container {
+            background: #ffffff;
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+            border: 3px solid #333;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        /* CLASS (Reusable Boxes) */
+        .feature-box {
+            width: 40%;
+            padding: 20px;
+            background: #3498db;
+            color: white;
+            border-radius: 10px;
+            border: 4px dashed #2980b9;
+            transition: 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: scale(1.05);
+            background: #2980b9;
+        }
+
+        /* FLEX LAYOUT */
+        .box-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        /* UNIQUE ID */
+        #priority-alert {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 10px;
+            border: 5px solid #c0392b;
+            font-weight: bold;
+        }
+
+        /* SECOND SECTION */
+        .content-card {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .content-card h2 {
+            color: #1abc9c;
+        }
+
+        #unique-header {
+            background: #9b59b6;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #action-footer {
+            background: #f39c12;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main-container">
+
+        <h1>CSS Selector & Box Model Demo</h1>
+        <p>Classes are reusable. IDs are unique.</p>
+
+        <!-- CLASS EXAMPLE -->
+        <div class="box-container">
+
+            <div class="feature-box">
+                <strong>.feature-box (Class)</strong>
+                <p>This is reusable class box.</p>
+            </div>
+
+            <div class="feature-box">
+                <strong>.feature-box (Class)</strong>
+                <p>Same class → Same design.</p>
+            </div>
+
+        </div>
+
+        <!-- ID EXAMPLE -->
+        <div id="priority-alert">
+            #priority-alert (ID)
+            <p>This is a unique element.</p>
+        </div>
+
+        <!-- SECOND SECTION -->
+
+        <div id="unique-header">
+            <h2>#unique-header</h2>
+            <p>I am a unique ID section.</p>
+        </div>
+
+        <div class="content-card">
+            <h2>.content-card</h2>
+            <p>I am reusable class box.</p>
+        </div>
+
+        <div class="content-card">
+            <h2>.content-card</h2>
+            <p>We share same styling.</p>
+        </div>
+
+        <div id="action-footer">
+            <h2>#action-footer</h2>
+            <p>Another unique ID section.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
+```

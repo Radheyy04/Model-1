@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Page Single File Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth; /* Smooth scrolling between pages */
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+        }
+
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 15px 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Logo Styling */
+        .logo a {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333333;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation Container */
+        .nav-container {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: #555555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-item:hover {
+            color: #007bff;
+        }
+
+        /* Button Stylings */
+        .nav-btn {
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .register-btn {
+            background-color: transparent;
+            color: #007bff;
+            border: 2px solid #007bff;
+        }
+
+        .register-btn:hover {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .login-btn {
+            background-color: #007bff;
+            color: #ffffff;
+            border: 2px solid #007bff;
+        }
+
+        .login-btn:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #333333;
+            user-select: none;
+        }
+
+        .page-section {
+            min-height: calc(100vh - 70px); /* Full height minus header */
+            padding: 80px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .page-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .page-section p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        #homePage {
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        #servicesPage {
+            background-color: #ffffff;
+        }
+
+        /* Flexbox Wrapper for Services */
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .square-box {
+            background-color: #f8fafc;
+            width: 280px;
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 25px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .square-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-color: #007bff;
+            background-color: #ffffff;
+        }
+
+        .square-box .box-number {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+
+        .square-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+
+        .square-box p {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0;
+        }
+
+        #contactPage {
+            background-color: #f1f5f9;
+        }
+
+        .contact-form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #475569;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #007bff;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #334155;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #1e293b;
+        }
+
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 15px 20px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #ffffff;
+                width: 250px;
+                height: calc(100vh - 60px);
+                flex-direction: column;
+                padding: 30px 20px;
+                gap: 20px;
+                box-shadow: -5px 5px 10px rgba(0,0,0,0.05);
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .nav-links.active {
+                transform: translateX(0);
+            }
+
+            .nav-item, .nav-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .page-section {
+                padding: 60px 20px;
+            }
+
+            .square-box {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="logo">
+            <a href="#homePage">MyLogo</a>
+        </div>
+
+        <div class="nav-container">
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            
+            <nav class="nav-links" id="navLinks">
+                <!-- Anchor links matching Section IDs -->
+                <a href="#homePage" class="nav-item" onclick="closeMenu()">Home</a>
+                <a href="#servicesPage" class="nav-item" onclick="closeMenu()">Services</a>
+                <a href="#contactPage" class="nav-item" onclick="closeMenu()">Contact</a>
+                <a href="#" class="nav-btn register-btn">Registration</a>
+                <a href="#" class="nav-btn login-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-section" id="homePage">
+        <h1>Welcome to Our Platform</h1>
+        <p>We craft beautiful modern web designs and build scalable applications tailored directly to your digital goals.</p>
+        <a href="#servicesPage" class="cta-btn">Get Started</a>
+    </section>
+
+    <section class="page-section" id="servicesPage">
+        <h1>Our Services</h1>
+        <p>Explore our premium core technical offerings structured to enhance your operations.</p>
+
+        <!-- Flexbox Container with 6 Square Boxes -->
+        <div class="flex-container">
+            <div class="square-box">
+                <div class="box-number">01</div>
+                <h3>Web Design</h3>
+                <p>Creating clean, functional, and user-friendly digital layouts.</p>
+            </div>
+            <div class="square-box">
+                <div class="box-number">02</div>
+                <h3>Development</h3>
+                <p>Building scalable web applications with clean architecture.</p>
+            </div>
+            <div class="square-box">
+                <div class="box-number">03</div>
+                <h3>SEO Marketing</h3>
+                <p>Optimizing your digital footprint to reach higher rankings.</p>
+            </div>
+            <div class="square-box">
+                <div class="box-number">04</div>
+                <h3>App Design</h3>
+                <p>Crafting interactive mobile application mockups and interfaces.</p>
+            </div>
+            <div class="square-box">
+                <div class="box-number">05</div>
+                <h3>Cyber Security</h3>
+                <p>Keeping your digital platforms safe, robust, and well guarded.</p>
+            </div>
+            <div class="square-box">
+                <div class="box-number">06</div>
+                <h3>Cloud Services</h3>
+                <p>Deploying application modules smoothly onto remote server architectures.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section" id="contactPage">
+        <h1>Contact Us</h1>
+        <p>Have questions or want to collaborate? Drop us a message below and we will get back to you shortly.</p>
+        
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" rows="4" required placeholder="How can we help you?"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        const navLinks = document.getElementById('navLinks');
+
+        function toggleMenu() {
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            navLinks.classList.remove('active');
+        }
+    </script>
+</body>
+</html>

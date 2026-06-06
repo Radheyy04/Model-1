@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Layout Demo</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, sans-serif;
+    }
+
+    body{
+        background:#f4f4f4;
+    }
+
+    header{
+        background:#222;
+        color:white;
+        padding:20px;
+        text-align:center;
+    }
+
+    .float-section{
+        padding:20px;
+        background:white;
+        margin:20px;
+        overflow:auto;
+    }
+
+    .float-box{
+        width:30%;
+        float:left;
+        margin:1.66%;
+        background:#4caf50;
+        color:white;
+        padding:30px;
+        text-align:center;
+        border-radius:10px;
+    }
+
+    .flex-section{
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        flex-wrap:wrap;
+        padding:20px;
+        background:#fff;
+        margin:20px;
+    }
+
+    .flex-card{
+        background:#2196f3;
+        color:white;
+        width:250px;
+        margin:10px;
+        padding:30px;
+        text-align:center;
+        border-radius:10px;
+    }
+
+    .grid-section{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:20px;
+        padding:20px;
+        margin:20px;
+        background:white;
+    }
+
+    .grid-item{
+        background:#ff9800;
+        color:white;
+        padding:40px;
+        text-align:center;
+        border-radius:10px;
+    }
+
+    @media(max-width:768px){
+
+        .float-box{
+            width:100%;
+            margin:10px 0;
+        }
+        .flex-section{
+            flex-direction:column;
+        }
+        .grid-section{
+            grid-template-columns:1fr;
+        }
+    }
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Media Query, Flex, Grid & Float Layout</h1>
+</header>
+
+<section class="float-section">
+    <h2>Float Layout</h2>
+    <div class="float-box">Box 1</div>
+    <div class="float-box">Box 2</div>
+    <div class="float-box">Box 3</div>
+</section>
+
+<section class="flex-section">
+    <div class="flex-card">Flex Card 1</div>
+    <div class="flex-card">Flex Card 2</div>
+    <div class="flex-card">Flex Card 3</div>
+</section>
+
+<section class="grid-section">
+    <div class="grid-item">Grid 1</div>
+    <div class="grid-item">Grid 2</div>
+    <div class="grid-item">Grid 3</div>
+    <div class="grid-item">Grid 4</div>
+    <div class="grid-item">Grid 5</div>
+    <div class="grid-item">Grid 6</div>
+</section>
+
+</body>
+</html>

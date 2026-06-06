@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Counter</title>
+
+    <!-- React CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+    <!-- React DOM CDN -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel CDN -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #e8f0fe;
+        }
+
+        textarea {
+            width: 300px;
+            height: 120px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #666;
+            border-radius: 5px;
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 15px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #0d6efd;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0b5ed7;
+        }
+    </style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+function App() {
+
+    const [message, setMessage] = React.useState("");
+
+    function handleChange(event) {
+        setMessage(event.target.value);
+    }
+
+    function clearText() {
+        setMessage("");
+    }
+
+    return (
+        <div>
+            <h2>Character Counter</h2>
+
+            <textarea
+                value={message}
+                onChange={handleChange}
+                placeholder="Write something..."
+            />
+
+            <p>Characters: {message.length}</p>
+
+            <p>Words: {
+                message.trim() === ""
+                ? 0
+                : message.trim().split(/\s+/).length
+            }</p>
+
+            <button onClick={clearText}>
+                Clear
+            </button>
+        </div>
+    );
+}
+
+const root = ReactDOM.createRoot(
+    document.getElementById("root")
+);
+
+root.render(<App />);
+
+</script>
+
+</body>
+</html>

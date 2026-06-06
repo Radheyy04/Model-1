@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration Form</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #eef2f7;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            font-size: 36px;
+        }
+
+        header p {
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        nav {
+            background: #1e3a8a;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 30px;
+        }
+
+        section {
+            width: 65%;
+        }
+
+        article {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        article h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #0f172a;
+        }
+
+        aside {
+            width: 25%;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        aside h3 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #334155;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            margin-bottom: 18px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #2563eb;
+            outline: none;
+        }
+
+        .gender {
+            width: auto;
+            margin-right: 6px;
+        }
+
+        .btn {
+            width: 48%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background: #16a34a;
+        }
+
+        .reset-btn {
+            background: #dc2626;
+            float: right;
+        }
+
+        figure {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        figure img {
+            border-radius: 10px;
+        }
+
+        figcaption {
+            margin-top: 8px;
+            color: #555;
+            font-style: italic;
+        }
+
+        progress,
+        meter {
+            width: 100%;
+            height: 20px;
+            margin-top: 8px;
+            margin-bottom: 20px;
+        }
+
+        details {
+            margin-top: 15px;
+            background: #f1f5f9;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        code {
+            background: #e2e8f0;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Silver Oak University</h1>
+        <p>Student Registration Portal</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Registration</a>
+        <a href="#">Courses</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Main -->
+    <main>
+
+        <!-- Section -->
+        <section>
+
+            <!-- Article -->
+            <article>
+
+                <h2>Student Registration Form</h2>
+
+                <form>
+
+                    <label>Full Name</label>
+                    <input type="text"
+                        placeholder="Enter your name"
+                        required>
+
+                    <label>Enrollment Number</label>
+                    <input type="text"
+                        placeholder="Enter enrollment number"
+                        required>
+
+                    <label>Branch</label>
+                    <select required>
+                        <option value="">
+                            Select Branch
+                        </option>
+                        <option>
+                            Computer Engineering
+                        </option>
+                        <option>
+                            Information Technology
+                        </option>
+                        <option>
+                            Mechanical Engineering
+                        </option>
+                    </select>
+
+                    <label>Division</label>
+                    <input type="text"
+                        placeholder="Enter division">
+
+                    <label>Gender</label>
+
+                    <br><br>
+
+                    <input type="radio"
+                        name="gender"
+                        class="gender"> Male
+
+                    <input type="radio"
+                        name="gender"
+                        class="gender"
+                        style="margin-left:20px;"> Female
+
+                    <br><br><br>
+
+                    <label>Email Address</label>
+                    <input type="email"
+                        placeholder="Enter email">
+
+                    <label>Upload Photo</label>
+                    <input type="file">
+
+                    <!-- Figure -->
+                    <figure>
+
+                        <img src="student.png"
+                            width="130"
+                            alt="Student Image">
+
+                        <figcaption>
+                            Student Photo Preview
+                        </figcaption>
+
+                    </figure>
+
+                    <label>Remarks</label>
+                    <textarea rows="4"
+                        placeholder="Enter remarks"></textarea>
+
+                    <!-- Progress -->
+                    <label>Profile Completion</label>
+                    <progress value="75"
+                        max="100"></progress>
+
+                    <!-- Meter -->
+                    <label>Attendance Level</label>
+                    <meter value="0.85"></meter>
+
+                    <br><br>
+
+                    <!-- Output -->
+                    <label>Semester</label>
+                    <output>Semester 4</output>
+
+                    <br><br>
+
+                    <input type="submit"
+                        value="Submit"
+                        class="btn submit-btn">
+
+                    <input type="reset"
+                        value="Clear"
+                        class="btn reset-btn">
+
+                </form>
+
+            </article>
+
+        </section>
+
+        <!-- Aside -->
+        <aside>
+
+            <h3>Student Information</h3>
+
+            <p>
+                Fill the registration form carefully
+                and upload a proper student photo.
+            </p>
+
+            <details>
+
+                <summary>
+                    Registration Instructions
+                </summary>
+
+                <p style="margin-top:10px;">
+                    All fields marked required
+                    must be filled before submission.
+                </p>
+
+            </details>
+
+            <br>
+
+            <address>
+
+                Email:
+                info@sou.edu.in
+
+                <br><br>
+
+                Ahmedabad, Gujarat
+
+            </address>
+
+            <br>
+
+            <p>
+
+                <abbr title="Information Technology">
+                    IT
+                </abbr>
+
+                Department
+
+            </p>
+
+            <br>
+
+            <cite>
+                Silver Oak University Portal
+            </cite>
+
+            <br><br>
+
+            <code>
+                HTML5 Semantic Elements
+            </code>
+
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            &copy; 2026 Silver Oak University |
+            All Rights Reserved
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
